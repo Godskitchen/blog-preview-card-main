@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Figtree';
+  src: url('../assets/fonts/Figtree-Italic-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('../assets//fonts//Figtree-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal
+}
+
+@function size($size-in-px) {
+  @return calc($size-in-px / $fz-default * 1rem);
+}
+
+@function size-mobile($size-in-px) {
+  @return calc($size-in-px / $vp-375 * 100vw);
+}
+
+@function size-desktop($size-in-px) {
+  @return calc($size-in-px / $vp-1440 * 100vw);
+}
