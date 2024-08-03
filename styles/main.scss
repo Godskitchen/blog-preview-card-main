@@ -5,11 +5,12 @@
 }
 
 html {
+ 
   font-size: size-desktop($fz-default);
   height: 100%;
 
-  @media (max-width: 768px) {
-    font-size: size-mobile($fz-default);
+  @media (max-width: 1439px) {
+    font-size: 100%;
   }
 }
 
@@ -87,32 +88,28 @@ body {
   &__tag {
     background-color: $yellow;
     font-weight: 800;
-    font-size: size(14px);
+
+    $font-ratio: calc((14px - 12px)/(1440px - 375px));
+    $font-init: calc(12px - $font-ratio * 375px);
+    font-size: clamp(size(12px), calc($font-ratio * 100vw + size($font-init)), size(14px));
     padding: size(4px) size(12px);
     border-radius: size(4px);
     align-self: flex-start;
 
-    @media (max-width: 768px) {
-      font-size: size(12px);
-    }
   }
 
   &__published-date {
+    $font-ratio: calc((14px - 12px)/(1440px - 375px));
+    $font-init: calc(12px - $font-ratio * 375px);
+    font-size: clamp(size(12px), calc($font-ratio * 100vw + size($font-init)), size(14px));
     font-weight: 500;
-    font-size: size(14px);
-
-    @media (max-width: 768px) {
-      font-size: size(12px);
-    }
   }
 
   &__title {
     font-weight: 800;
-    font-size: size(24px);
-
-    @media (max-width: 768px) {
-      font-size: size(20px);
-    }
+    $font-ratio: calc((24px - 20px)/(1440px - 375px));
+    $font-init: calc(20px - $font-ratio * 375px);
+    font-size: clamp(size(20px), calc($font-ratio * 100vw + size($font-init)), size(24px));
 
     @media (hover: hover) {
       &:hover {
@@ -128,12 +125,11 @@ body {
   }
 
   &__description {
+    $font-ratio: calc((16px - 14px)/(1440px - 375px));
+    $font-init: calc(14px - $font-ratio * 375px);
+    font-size: clamp(size(14px), calc($font-ratio * 100vw + size($font-init)), size(16px));
     color: $gray-500;
     font-weight: 500;
-
-    @media (max-width: 768px) {
-      font-size: size(14px);
-    }
   }
 }
 
