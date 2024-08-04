@@ -1,3 +1,5 @@
+
+
 * {
   margin: 0;
   padding: 0;
@@ -88,10 +90,7 @@ body {
   &__tag {
     background-color: $yellow;
     font-weight: 800;
-
-    $font-ratio: calc((14px - 12px)/(1440px - 375px));
-    $font-init: calc(12px - $font-ratio * 375px);
-    font-size: clamp(size(12px), calc($font-ratio * 100vw + size($font-init)), size(14px));
+    font-size: clamp(size(12px), calc(size(12px) + 2 * $vp-shift), size(12px) + 2px);
     padding: size(4px) size(12px);
     border-radius: size(4px);
     align-self: flex-start;
@@ -99,17 +98,13 @@ body {
   }
 
   &__published-date {
-    $font-ratio: calc((14px - 12px)/(1440px - 375px));
-    $font-init: calc(12px - $font-ratio * 375px);
-    font-size: clamp(size(12px), calc($font-ratio * 100vw + size($font-init)), size(14px));
+    font-size: clamp(size(12px), calc(size(12px) + 2 * $vp-shift), size(12px) + 2px);
     font-weight: 500;
   }
 
   &__title {
     font-weight: 800;
-    $font-ratio: calc((24px - 20px)/(1440px - 375px));
-    $font-init: calc(20px - $font-ratio * 375px);
-    font-size: clamp(size(20px), calc($font-ratio * 100vw + size($font-init)), size(24px));
+    font-size: clamp(size(20px), calc(size(20px) + 4 * $vp-shift), size(20px) + 4px);
 
     @media (hover: hover) {
       &:hover {
@@ -125,9 +120,7 @@ body {
   }
 
   &__description {
-    $font-ratio: calc((16px - 14px)/(1440px - 375px));
-    $font-init: calc(14px - $font-ratio * 375px);
-    font-size: clamp(size(14px), calc($font-ratio * 100vw + size($font-init)), size(16px));
+    font-size: clamp(size(14px), calc(size(14px) + 2 * $vp-shift), size(14px) + 2px);
     color: $gray-500;
     font-weight: 500;
   }
